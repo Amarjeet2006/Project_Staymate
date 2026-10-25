@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>StayMate Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header><button id="menu">☰</button><img src="./staymatelogo1.png" alt="StayMate" class="logo"><b>Student
+            Dashboard</b><span class="user">🟡 Amarjeet Kumar</span></header>
+    <div id="shade"></div>
+    <aside id="drawer"><button id="close">✕</button><img src="./staymatelogo.png" alt="StayMate"
+            class="drawer-logo">
+        <nav><button data-page="dashboard" class="active">⌂ Dashboard</button><button data-page="complaints">▤
+                Complaints</button><button data-page="profile">♙ Profile</button><button data-page="settings">⚙
+                Settings</button></nav>
+        <div class="bottom">
+            <p><b>AK</b> Amarjeet Kumar<small>Student ID: STU1024</small></p><button id="logout">⇥ Logout</button>
+        </div>
+    </aside>
+    <main>
+        <section id="dashboard" class="page">
+            <h1>Good Morning, Amarjeet! 👋</h1>
+            <p class="muted">Manage your hostel issues in one place.</p>
+            <div class="stats">
+                <article class="card">
+                    <p>Total Complaints</p>
+                    <h2>5</h2>
+                </article>
+                <article class="card">
+                    <p>In Progress</p>
+                    <h2>2</h2>
+                </article>
+                <article class="card">
+                    <p>Resolved</p>
+                    <h2>3</h2>
+                </article>
+            </div>
+            <div class="cols">
+                <article class="card">
+                    <h2>Quick Actions</h2><button class="action" data-page="complaints">✎ Submit a Complaint
+                        →</button><label class="action">📷 Take Photo (Optional)<input type="file" accept="image/*"
+                            capture="environment" hidden class="photo"></label><label class="action">▧ Choose from
+                        Gallery<input type="file" accept="image/*" hidden class="photo"></label>
+                    <p id="photoName" class="muted"></p>
+                </article>
+                <article class="card">
+                    <h2>Recent Activity</h2>
+                    <p>🟡 Complaint #CMP005 is in progress <small>2 hours ago</small></p>
+                    <hr>
+                    <p>🟢 Complaint #CMP003 has been resolved <small>Yesterday</small></p>
+                    <hr>
+                    <p>🟡 Room allocation updated <small>2 days ago</small></p>
+                </article>
+            </div>
+            <article class="card">
+                <h2>My Complaints <button class="text" data-page="complaints">View all →</button></h2>
+                <div class="table">
+                    <table>
+                        <tr>
+                            <th>ID</th>
+                            <th>Category</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                        </tr>
+                        <tr>
+                            <td>CMP005</td>
+                            <td>Electricity</td>
+                            <td>22 Oct</td>
+                            <td><em class="progress">In Progress</em></td>
+                        </tr>
+                        <tr>
+                            <td>CMP004</td>
+                            <td>Washroom</td>
+                            <td>20 Oct</td>
+                            <td><em class="submitted">Submitted</em></td>
+                        </tr>
+                        <tr>
+                            <td>CMP003</td>
+                            <td>Washing Machine</td>
+                            <td>18 Oct</td>
+                            <td><em class="resolved">Resolved</em></td>
+                        </tr>
+                    </table>
+                </div>
+            </article>
+        </section>
+        <section id="complaints" class="page hidden">
+            <h1>Complaints</h1>
+            <p class="muted">Submit an issue and track its status.</p>
+            <article class="card form">
+                <h2>Submit a Complaint</h2>
+                <form id="form"><label>Category<select required>
+                            <option value="">Select category</option>
+                            <option>Electricity</option>
+                            <option>Washroom</option>
+                            <option>Washing Machine</option>
+                            <option>Mess / Food</option>
+                            <option>Other</option>
+                        </select></label><label>Description<textarea required
+                            placeholder="Describe your issue..."></textarea></label>
+                    <p>Photo (optional)</p>
+                    <div class="cols"><label class="action">📷 Take Photo<input type="file" accept="image/*"
+                                capture="environment" hidden class="photo"></label><label class="action">▧ Choose
+                            Gallery<input type="file" accept="image/*" hidden class="photo"></label></div>
+                    <p id="formPhoto" class="muted"></p><button class="primary">Submit Complaint</button>
+                </form>
+                <p id="msg" class="muted"></p>
+            </article>
+            <article class="card">
+                <h2>Complaint Status</h2>
+                <p>Submitted · In Progress · Resolved</p>
+            </article>
+        </section>
+        <section id="profile" class="page hidden">
+            <h1>My Profile</h1>
+            <article class="card profile">
+                <div class="avatar">AK</div>
+                <h2>Amarjeet Kumar</h2>
+                <p>Student ID: STU1024</p>
+                <hr>
+                <h3>Personal Details</h3>
+                <p>Course <b>B.Tech (CSE)</b></p>
+                <p>Year <b>1st Year</b></p>
+                <p>Email <b>amarjeet@example.com</b></p>
+                <hr>
+                <h3>Room Allocation</h3>
+                <p>Hostel Block <b>Block A</b></p>
+                <p>Room Number <b>204</b></p>
+                <p>Room Type <b>Shared (2 Seater)</b></p>
+            </article>
+        </section>
+        <section id="settings" class="page hidden">
+            <h1>Settings</h1>
+            <article class="card">Account settings will be available here.</article>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>

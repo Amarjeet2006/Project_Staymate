@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StayMate Login</title>
+  <link rel="stylesheet" href="./login.css">
+</head>
+<body>
+  <main class="login-card">
+    <header class="brand">
+      <div class="logo" aria-hidden="true">⌂</div>
+      <h1>STAY<span>MATE</span></h1>
+      <p>Hostel Management System</p>
+    </header>
+
+    <section class="welcome">
+      <h2>Welcome Back!</h2>
+      <p>Login to your StayMate account</p>
+    </section>
+
+    <div class="role-switch" aria-label="Choose account type">
+      <button class="role active" data-role="student" type="button">Student</button>
+      <button class="role" data-role="admin" type="button">Admin</button>
+    </div>
+
+    <form id="loginForm">
+      <label class="sr-only" for="userId">Student ID</label>
+      <input id="userId" type="text" placeholder="Student ID" autocomplete="username" required>
+
+      <div class="password-wrap">
+        <label class="sr-only" for="password">Password</label>
+        <input id="password" type="password" placeholder="Password" autocomplete="current-password" required>
+        <button id="togglePassword" type="button" aria-label="Show password">Show</button>
+      </div>
+
+      <button class="login-button" type="submit">Login <span aria-hidden="true">→</span></button>
+      <p id="message" class="message" role="status"></p>
+    </form>
+
+    <footer>
+      <p class="new-here"><span></span>New here?<span></span></p>
+      <a href="mailto:admin@staymate.com">Contact Admin</a>
+    </footer>
+  </main>
+  <script src="./login.js"></script>
+</body>
+</html>
